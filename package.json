@@ -1,0 +1,22 @@
+{
+  "name": "restfulroutespractice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rg460/RestfulRoutesPractice.git"
+  },
+  "author": "Ravi Gordon",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rg460/RestfulRoutesPractice/issues"
+  },
+  "homepage": "https://github.com/rg460/RestfulRoutesPractice#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
