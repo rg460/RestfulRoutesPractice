@@ -4,9 +4,31 @@ const path = require('path');
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-
 app.set('views',path.join(__dirname, 'views'))
 app.set('view engine','ejs');
+
+const comments = [
+    {
+        username : 'Jim77777',
+        comment: 'I love Javascript!'
+    },
+    {
+        username : 'Tom1993',
+        comment: 'I am learning web developlment!'
+    },
+    {
+        username : 'Shaq32',
+        comment: 'Python is cool'
+    },
+    {
+        username : 'LebronJames23',
+        comment: 'Everyone should learn to code it is so fun'
+    },
+]
+
+app.get('comment', (req,res) => {
+    res.render('index');
+})
 
 
 app.get('/tacos', (req, res) => {
