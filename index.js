@@ -9,6 +9,7 @@ app.set('view engine', 'ejs')
 
 const comments = [
     {
+        id: 1,
         username : 'Jim77777',
         comment: 'I love Javascript!'
     },
@@ -17,13 +18,15 @@ const comments = [
         comment: 'I am learning web developlment!'
     },
     {
+        id: 2,
         username : 'Shaq32',
         comment: 'Python is cool'
     },
     {
+        id: 3,
         username : 'LebronJames23',
         comment: 'Everyone should learn to code it is so fun'
-    },
+    }
 ]
 
 app.get('/comments', (req, res) => {
@@ -34,8 +37,14 @@ app.get('/comments/new', (req, res) => {
     res.render('comments/new');
 })
  app.post('/comments', (req, res) => {
-     console.log(req.body);
-     res.send("IT WORKED!");
+    const { username, comment } = req.body;
+    comments.push({ username, comment})
+     res.redirect('/comments');
+ })
+ app.get('/comments/:id', (req, res) => {
+       const {id } = req.params;
+      const comment = comments.find(c => c.id === parseInt(id))
+      res.render('comments/show',{comment})
  })
 
 app.get('/tacos', (req, res) => {
