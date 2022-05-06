@@ -4,6 +4,8 @@ const app = express();
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
 
+app.set('view engine','ejs')
+
 
 app.get('/tacos', (req, res) => {
     res.send("GET/tacos response");
