@@ -27,7 +27,7 @@ const comments = [
 ]
 
 app.get('/comments', (req, res) => {
-    res.render('comments/index');
+    res.render('comments/index', {comments});
 })
 
 
