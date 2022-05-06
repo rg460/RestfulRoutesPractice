@@ -16,6 +16,7 @@ app.listen(3000,()=>{
     console.log('listening on port 3000');
 })
 
+// Restful API Blueprint
 // RESTFUL COMMENTS
 // GET / comments - list all comments
 // POST / comments - list all comments
