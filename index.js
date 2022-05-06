@@ -4,8 +4,8 @@ const path = require('path');
 
 app.use(express.urlencoded({extended:true}));
 app.use(express.json());
-app.set('views',path.join(__dirname, 'views'))
-app.set('view engine','ejs');
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
 const comments = [
     {
@@ -26,8 +26,8 @@ const comments = [
     },
 ]
 
-app.get('comment', (req,res) => {
-    res.render('index');
+app.get('/comments', (req, res) => {
+    res.render('comments/index');
 })
 
 
