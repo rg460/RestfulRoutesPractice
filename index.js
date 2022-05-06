@@ -11,21 +11,22 @@ app.set('view engine', 'ejs')
 
 const comments = [
     {
-        id: 1,
+        id: uuidv4(),
         username : 'Jim77777',
         comment: 'I love Javascript!'
     },
     {
+        id: uuidv4(),
         username : 'Tom1993',
         comment: 'I am learning web developlment!'
     },
     {
-        id: 2,
+        id:  uuidv4(),
         username : 'Shaq32',
         comment: 'Python is cool'
     },
     {
-        id: 3,
+        id:  uuidv4(),
         username : 'LebronJames23',
         comment: 'Everyone should learn to code it is so fun'
     }
@@ -40,12 +41,12 @@ app.get('/comments/new', (req, res) => {
 })
  app.post('/comments', (req, res) => {
     const { username, comment } = req.body;
-    comments.push({ username, comment})
+    comments.push({ username, comment, id:  uuidv4()})
      res.redirect('/comments');
  })
  app.get('/comments/:id', (req, res) => {
        const {id } = req.params;
-      const comment = comments.find(c => c.id === parseInt(id))
+      const comment = comments.find(c => c.id === id)
       res.render('comments/show',{comment})
  })
 
