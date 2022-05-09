@@ -4,15 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit</title>
+    <title>Comments Index</title>
 </head>
 
 <body>
-    <h1>Edit</h1>
-    <form method="POST" action="/comments/<%=comment.id%>?_method=PATCH">
-        <textarea name="comment" id="" cols="30" rows="10"><%= comment.comment %></textarea>
-        <button>Save</button>
-    </form>
+    <h1>Comments</h1>
+    <ul>
+        <% for(let c of comments) {%>
+        <li>
+            <%=c.comment%> - <b><%=c.username%></b>
+            <a href="/comments/<%= c.id %>">details</a>
+        </li>
+        <% }%>
+    </ul>
+    <a href="/comments/new">New Comment</a>
 
 </body>
 
