@@ -49,6 +49,9 @@ app.get('/comments/new', (req, res) => {
       const comment = comments.find(c => c.id === id)
       res.render('comments/show',{comment})
  })
+ app.patch('/comments/:id', (req, res) => {
+     res.send('UPDATING SOMETHING')
+ })
 
 app.get('/tacos', (req, res) => {
     res.send("GET/tacos response");
@@ -66,6 +69,6 @@ app.listen(3000,()=>{
 // GET / comments - list all comments
 // POST / comments - list all comments
 // GET / comments/:id - Get one comment (using ID)
-// PATCH / comments/:id - Patch one comment 
+// PATCH / comments/:id - change one comment 
 // DELETE / comments/:id - Delete one comment
 
